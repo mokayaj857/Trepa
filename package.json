@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "blakejs": "^1.1.0",
-    "@x402/core": "file:vendor/x402/typescript/packages/core"
+    "@x402/core": "file:vendor/x402/typescript/packages/core",
+    "@mysten/sui.js": "^0.33.0"
   },
   "devDependencies": {
     "typescript": "^5.2.2"

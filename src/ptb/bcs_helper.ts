@@ -12,8 +12,11 @@ export function u64ToLE(value: bigint | number): Uint8Array {
 }
 
 export function hexToBytes(hex: string): Uint8Array {
-  const clean = hex.startsWith("0x") ? hex.slice(2) : hex;
-  if (clean.length % 2 === 1) throw new Error("Invalid hex string");
+  let clean = (hex ?? "").toString();
+  if (clean.startsWith("0x")) clean = clean.slice(2);
+  // If odd length, pad with a leading zero
+  if (clean.length % 2 === 1) clean = "0" + clean;
+  if (!/^[0-9a-fA-F]*$/.test(clean)) throw new Error("Invalid hex string");
   const bytes = new Uint8Array(clean.length / 2);
   for (let i = 0; i < bytes.length; i++) {
     bytes[i] = parseInt(clean.substr(i * 2, 2), 16);

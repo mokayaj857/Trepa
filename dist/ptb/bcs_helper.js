@@ -10,8 +10,13 @@ export function u64ToLE(value) {
     return new Uint8Array(buf);
 }
 export function hexToBytes(hex) {
-    const clean = hex.startsWith("0x") ? hex.slice(2) : hex;
+    let clean = (hex ?? "").toString();
+    if (clean.startsWith("0x"))
+        clean = clean.slice(2);
+    // If odd length, pad with a leading zero
     if (clean.length % 2 === 1)
+        clean = "0" + clean;
+    if (!/^[0-9a-fA-F]*$/.test(clean))
         throw new Error("Invalid hex string");
     const bytes = new Uint8Array(clean.length / 2);
     for (let i = 0; i < bytes.length; i++) {

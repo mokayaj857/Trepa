@@ -1,0 +1,17 @@
+{
+  "name": "trepa-ptb",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "node ./dist/test-runner.mjs"
+  },
+  "dependencies": {
+    "blakejs": "^1.1.0",
+    "@x402/core": "file:vendor/x402/typescript/packages/core"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

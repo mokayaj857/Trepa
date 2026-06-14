@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "test": "node ./dist/test-runner.mjs"
+    "test": "node ./dist/test/test-runner.js"
   },
   "dependencies": {
     "blakejs": "^1.1.0",

@@ -1,0 +1,12 @@
+[package]
+name = "trepa"
+version = "0.0.1"
+edition = "2024.beta"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+0xSecure = { git = "https://github.com/0xsecure/0xsecure.git", subdir = "Contracts/0xsecure", rev = "main" }
+
+[addresses]
+my_protocol = "0x0"
+oxsecure = "0x07c365ac725cc6cca2846899d8b816860b47e5449af687e688c331b2c39be44c"
